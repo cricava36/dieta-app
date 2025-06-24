@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/dieta-app/static/css/main.e800e179.css",
-    "main.js": "/dieta-app/static/js/main.d13bcbed.js",
-    "index.html": "/dieta-app/index.html",
-    "main.e800e179.css.map": "/dieta-app/static/css/main.e800e179.css.map",
-    "main.d13bcbed.js.map": "/dieta-app/static/js/main.d13bcbed.js.map"
+    "main.css": "./static/css/main.e800e179.css",
+    "main.js": "./static/js/main.2bf063ff.js",
+    "index.html": "./index.html",
+    "main.e800e179.css.map": "./static/css/main.e800e179.css.map",
+    "main.2bf063ff.js.map": "./static/js/main.2bf063ff.js.map"
   },
   "entrypoints": [
     "static/css/main.e800e179.css",
-    "static/js/main.d13bcbed.js"
+    "static/js/main.2bf063ff.js"
   ]
 }
