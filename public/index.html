@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#667eea" />
+    <meta name="description" content="App per gestire la tua dieta giornaliera con ricette, timer e lista spesa" />
+    <meta name="keywords" content="dieta, ricette, alimentazione, salute, timer cottura" />
+    <meta name="author" content="Cascade AI" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Dieta App" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Dieta Giornaliera" />
+    <meta property="og:description" content="Gestisci la tua dieta con ricette, timer e lista spesa" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/favicon.ico" />
+    
+    <title>Dieta Giornaliera</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+    
+    <script>
+      // Registrazione Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('SW registrato con successo:', registration.scope);
+            }, function(err) {
+              console.log('SW registrazione fallita:', err);
+            });
+        });
+      }
+      
+      // Prompt installazione PWA
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        // Mostra un banner o pulsante per l'installazione
+        const installButton = document.createElement('button');
+        installButton.textContent = '📱 Installa App';
+        installButton.style.cssText = `
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: linear-gradient(135deg, #667eea, #764ba2);
+          color: white;
+          border: none;
+          padding: 12px 20px;
+          border-radius: 25px;
+          font-weight: 600;
+          cursor: pointer;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+          z-index: 1000;
+          transition: all 0.3s ease;
+        `;
+        
+        installButton.addEventListener('click', () => {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('Utente ha accettato l\'installazione');
+            }
+            deferredPrompt = null;
+            installButton.remove();
+          });
+        });
+        
+        document.body.appendChild(installButton);
+        
+        // Rimuovi il pulsante dopo 10 secondi se non cliccato
+        setTimeout(() => {
+          if (installButton.parentNode) {
+            installButton.remove();
+          }
+        }, 10000);
+      });
+    </script>
+  </head>
+  <body>
+    <noscript>Devi abilitare JavaScript per utilizzare questa app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+{
+  "short_name": "Dieta App",
+  "name": "Dieta Giornaliera - Gestione Piano Alimentare",
+  "description": "App per gestire la tua dieta giornaliera con ricette, timer e lista spesa",
+  "id": "dieta-app-react",
+  "icons": [
+    {
+      "src": "https://cdn.jsdelivr.net/npm/@tabler/icons@2.40.0/icons/apple.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/npm/@tabler/icons@2.40.0/icons/apple.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/npm/@tabler/icons@2.40.0/icons/apple.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/npm/@tabler/icons@2.40.0/icons/apple.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay"],
+  "theme_color": "#667eea",
+  "background_color": "#667eea",
+  "orientation": "portrait-primary",
+  "categories": ["health", "food", "lifestyle"],
+  "lang": "it",
+  "scope": "/",
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "screenshots": [
+    {
+      "src": "https://cdn.jsdelivr.net/npm/@tabler/icons@2.40.0/icons/apple.svg",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/npm/@tabler/icons@2.40.0/icons/apple.svg",
+      "sizes": "750x1334",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ]
+}
